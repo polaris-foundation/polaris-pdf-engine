@@ -1,0 +1,86 @@
+version: 2.1
+orbs:
+  azure-acr: circleci/azure-acr@0.1.4
+  ms-teams: cloudradar-monitoring/ms-teams@0.0.1
+jobs:
+  test:
+    docker:
+      - image: circleci/node:11.13.0
+    environment:
+      COVERAGE_REPORT_DIR: coverage-reports
+      COVERAGE_REPORT_FILE: lcov.info
+    steps:
+      - checkout
+      - run:
+          name: Create coverage report dir
+          command: mkdir -p ${COVERAGE_REPORT_DIR}
+      - restore_cache:
+          keys:
+            - v1-yarn-deps-{{ checksum "yarn.lock" }}
+            - v1-yarn-deps-
+      - run:
+          name: Set up yarn tests
+          command: yarn install --frozen-lockfile
+      - run:
+          name: Run yarn linter
+          command: yarn lint
+      - save_cache:
+          key: v1-yarn-deps-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run yarn tests
+          command: yarn test
+      - persist_to_workspace:
+          root: coverage-reports
+          paths:
+            - lcov.info
+  deploy-dev:
+    docker:
+      - image: gcr.io/dhos-stack/circleci-build-image:latest
+        auth:
+          username: _json_key
+          password: $GOOGLE_AUTH
+    environment:
+      K8S_DEV_CLUSTER_NAME: dh-local
+      K8S_DEV_TAG: dev
+      K8S_DEV_DEPLOYMENT_NAME: deploy/dhos-pdf-api-dep
+      ACR_REPO_BASE: dhos
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+          version: 20.10.7
+      - run:
+          name: Add build information
+          command: .circleci/record_build_info.sh
+      - run:
+          name: Build image
+          command: docker build -t ${CIRCLE_PROJECT_REPONAME} .
+      - azure-acr/build-and-push-image:
+          checkout: false
+          login-server-name: ${AZURE_LOGIN_SERVER_NAME}
+          registry-name: ${AZURE_REGISTRY_NAME}
+          repo: ${ACR_REPO_BASE}/dhos-pdf-engine
+          tag: dev,cb-${CIRCLE_BUILD_NUM},$(git log --pretty=format:'%h' -n 1)
+          extra-build-args: --build-arg PIP_EXTRA_INDEX_URL
+      - run:
+          name: Deploy to Azure dev environment
+          command: .circleci/deploy_azure_dev.sh
+      - ms-teams/report:
+          only_on_fail: true
+          webhook_url: ${MSTEAMS_NOTIFY_WEBHOOK_URL}
+workflows:
+  version: 2
+  build_test_deploy:
+    jobs:
+      - test:
+          context: engineering-build
+      - deploy-dev:
+          context: dhos-deploy
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - develop

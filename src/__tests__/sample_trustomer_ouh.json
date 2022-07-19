@@ -1,0 +1,44 @@
+{
+  "send_config": {
+    "news2": {
+      "zero_severity_interval_hours": 12,
+      "low_severity_interval_hours": 4,
+      "low_medium_severity_interval_hours": 1,
+      "medium_severity_interval_hours": 1,
+      "high_severity_interval_hours": 0,
+      "escalation_policy": {
+        "routine_monitoring": "<p>Take 12-hourly observations (Minimum).</p>",
+        "low_monitoring": "<p>A Registered Nurse must assess the patient. Consider taking observations at least every four hours. Consider medical review.</p>",
+        "low_medium_monitoring": "<p>A Registered Nurse must assess the patient. Consider medical review. Recheck observations within 1 hour.</p>",
+        "medium_monitoring": "<p>Ask a senior Registered Nurse on the ward/unit to reassess the patient. Implement first line treatment and/or review treatment plan. Recheck observations within 1 hour. Ensure senior medical review (ST3 equivalent or above) within 1 hour.</p>",
+        "high_monitoring": "<p>Ask a senior Registered Nurse on the ward/unit to reassess the patient. Implement first line treatment and/or review treatment plan. Ensure senior medical review (ST3 equivalent or above) within 30 minutes who will consider need for critical care advice. Move the patient to an observation area on the ward/unit. Consider continuous monitoring. Record observations within 1 hour.</p>"
+      }
+    },
+    "nurse_concern": [
+      {"code": "A", "name": "Airway compromise", "text": "Airway compromise"},
+      {"code": "B", "name": "Bleeding / melena", "text": "Bleeding / melena"},
+      {"code": "C", "name": "Pallor or cyanosis", "text": "Pallor or cyanosis"},
+      {"code": "D", "name": "New facial/limb weakness", "text": "New facial/limb weakness"},
+      {"code": "E", "name": "Diarrhoea or vomiting", "text": "Diarrhoea or vomiting"},
+      {"code": "F", "name": "Abnormal electrolyte or BM", "text": "Abnormal electrolyte or BM"},
+      {"code": "G", "name": "Unresolved Pain", "text": "Unresolved pain"},
+      {"code": "H", "name": "Self-harm", "text": "Self-harm"},
+      {"code": "I", "name": "Infection?", "text": "Possible infection"},
+      {"code": "J", "name": "Shock (HR > BP)", "text": "Shock (HR > BP)"}
+    ],
+    "oxygen_masks": [
+      {"code": "RA", "name": "Room Air"},
+      {"code": "V{mask_percent}", "name": "Venturi"},
+      {"code": "H{mask_percent}", "name": "Humidified"},
+      {"code": "HIF{mask_percent}", "name": "High Flow"},
+      {"code": "N", "name": "Nasal cann."},
+      {"code": "SM", "name": "Simple"},
+      {"code": "RM", "name": "Resv mask"},
+      {"code": "TM", "name": "Trach."},
+      {"code": "CP", "name": "CPAP"},
+      {"code": "NIV", "name": "NIV"},
+      {"code": "OPT", "name": "Optiflow"},
+      {"code": "NM", "name": "Nebuliser"}
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: DHOS PDF Engine
+  description: |
+    This swagger defines the API exposed by the PDF engine
+
+host: localhost:3000
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+responses: # Shared
+
+  BadRequest:
+    description: Bad or malformed request was received
+    schema:
+      $ref: "#/definitions/Error"
+
+  NotFound:
+    description: The specified resource was not found
+    schema:
+      $ref: "#/definitions/Error"
+
+
+paths:
+
+  /running:
+    get:
+      summary: "Endpoint that simply indicates the engine is running"
+      produces:
+      - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Running"
+        default:
+          description: Unexpected error
+
+  /healthcheck:
+    get:
+      summary: "Node Express Healthcheck endpoint"
+      produces:
+      - application/json
+      responses:
+        200:
+          description: OK
+        default:
+          description: Unexpected error
+
+  /dhos/v1/sample_send_pdf:
+    get:
+      summary: "Create a sample PDF with dummy data"
+      parameters:
+        - in: query
+          name: page
+          type: string
+          required: false
+      produces:
+        - application/pdf
+      responses:
+        200:
+          description: OK
+
+  /dhos/v1/send_pdf:
+    post:
+      summary: "Create SEND BCP PDF from supplied JSON data"
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/CreateData'
+      produces:
+        - application/pdf
+      responses:
+        200:
+          description: OK
+
+
+definitions:
+
+  Error:
+    description: "An error response in json format"
+    type: object
+    example:
+      code: 404
+      message: "Not Found"
+    properties:
+      code:
+        description: 'HTTP response code'
+        type: integer
+        example: 404
+      message:
+        description: 'Message attached to response'
+        type: string
+        example: 'Not Found'
+    required:
+      - code
+      - message
+
+  Running:
+    description: "Indicate the engine is running"
+    type: object
+    example:
+      running: true
+    properties:
+      running:
+        type: boolean
+        example: true
+
+  Healthcheck:
+    description: "Express application monitoring endpoint"
+    type: object
+    example:
+      running: true
+    properties:
+      uptime:
+        type: number
+        example: 87.984
+
+  CreateData:
+    description: "Data required to create a PDF"
+    type: object
+    properties:
+      patient:
+        type: object
+      encounter:
+        type: object
+      observation_sets:
+        type: array
+      location:
+        type: object
+    required:
+      - patient
+      - encounter
+      - observations
+      - location
+

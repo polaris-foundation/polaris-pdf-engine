@@ -1,0 +1,66 @@
+{
+  "name": "dhos-pdf-engine",
+  "version": "0.1.0",
+  "description": "DHOS PDF Engine",
+  "main": "src/js/server.ts",
+  "scripts": {
+    "start": "ts-node src/server/server.ts",
+    "lint": "yarn validator && yarn eslint --quiet ./src",
+    "test": "yarn validator && TZ=Europe/London NODE_ENV=jest yarn jest",
+    "docker-build": "docker build -t dhos-pdf-engine/v19.1 .",
+    "docker-run": "docker run --name dhos-pdf-engine -p 3000:3000 -t dhos-pdf-engine/v19.1",
+    "docker-stop": "docker stop dhos-pdf-engine; docker rm dhos-pdf-engine",
+    "validator": "typescript-json-validator --collection --aliasRefs --strictNullChecks --noExtraProps --coerceTypes src/server/models/layoutTypes.ts"
+  },
+  "engines": {
+    "node": ">=11.0.0"
+  },
+  "license": "LicenseRef-LICENSE",
+  "private": true,
+  "contributors": [
+    {
+      "name": "Duncan Booth",
+      "email": "duncan.booth@sensynehealth.com"
+    }
+  ],
+  "homepage": "https://github.com/draysontechnologies/dhos-pdf-engine",
+  "dependencies": {
+    "@types/cheerio": "^0.22.12",
+    "@types/express": "^4.17.0",
+    "@types/pdfkit": "^0.7.36",
+    "ajv": "^6.10.2",
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-healthcheck": "^0.1.0",
+    "express-http-context": "^1.2.2",
+    "fs": "0.0.1-security",
+    "log4js": "^3.0.6",
+    "pdfkit": "^0.9.0",
+    "static-eval": "^2.0.2",
+    "svg-to-pdfkit": "^0.1.7",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2",
+    "typescript-json-validator": "^2.2.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^5.14.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.3.0",
+    "jest-haste-map": "^24.3.0",
+    "jest-resolve": "24.3.1",
+    "supertest": "^3.4.2",
+    "ts-jest": "^24.0.2",
+    "yarn": "^1.13.0"
+  }
+}

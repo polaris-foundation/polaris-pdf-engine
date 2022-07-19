@@ -1,0 +1,64 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:node/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/indent": ["off", 2],
+    "@typescript-eslint/no-var-requires": ["off"],
+    "@typescript-eslint/explicit-member-accessibility": ["off"],
+    "@typescript-eslint/camelcase": ["off"],
+    "@typescript-eslint/no-parameter-properties": ["off"],
+    "@typescript-eslint/explicit-function-return-type": ["error", {"allowTypedFunctionExpressions": true}],
+    "node/no-unsupported-features/es-syntax": ["off"],
+    "node/exports-style": [
+      "error",
+      "module.exports"
+    ],
+    "node/prefer-global/buffer": [
+      "error",
+      "always"
+    ],
+    "node/prefer-global/console": [
+      "error",
+      "always"
+    ],
+    "node/prefer-global/process": [
+      "error",
+      "always"
+    ],
+    "node/prefer-global/url-search-params": [
+      "error",
+      "always"
+    ],
+    "node/prefer-global/url": [
+      "error",
+      "always"
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "space-before-function-paren": [
+      2,
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "jest", "@typescript-eslint"
+  ],
+  "env": {
+    "jest/globals": true
+  }
+}

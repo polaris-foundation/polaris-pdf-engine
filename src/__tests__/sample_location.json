@@ -1,0 +1,19 @@
+{
+  "active": true,
+  "clinician_bookmark": false,
+  "display_name": "Sequoia Unit",
+  "location_type": "225746001",
+  "ods_code": "499WA",
+  "parents": [
+    {
+      "active": true,
+      "clinician_bookmark": false,
+      "display_name": "Birch Hospital",
+      "location_type": "22232009",
+      "ods_code": "123HO",
+      "uuid": "B1"
+    }
+  ],
+  "uuid": "B1-7"
+}
+

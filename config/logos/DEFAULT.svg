@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="44px" viewBox="0 0 200 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>SVGlogo/shealth/logotype/landscape/dark-text</title>
+    <desc>Created with Sketch.</desc>
+    <g id="logo/shealth/logotype/landscape/dark-text" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shealth-landscape" transform="translate(2.000000, 6.000000)">
+            <g id="copy" transform="translate(42.000000, 0.000000)" fill="#4D5858" font-family="SourceSansPro-Bold, Source Sans Pro" font-size="24.0820791" font-weight="bold" letter-spacing="-0.822315199">
+                <text id="Sensyne-Health">
+                    <tspan x="0.803169974" y="24">Sensyne Health</tspan>
+                </text>
+            </g>
+            <g id="logo">
+                <g id="Group-4-Copy-4" transform="translate(0.000000, 8.560920)" fill="#874DE2">
+                    <g id="Group-7">
+                        <path d="M11.4255599,5.57241379 L11.4255599,0.23908046 L24.5333333,0.23908046 C30.8661985,0.23908046 36,5.372882 36,11.7057471 C36,18.0386123 30.8661985,23.1724138 24.5333333,23.1724138 L9.33333333,23.1724138 L9.33333333,17.8390805 L24.5333333,17.8390805 C27.9206798,17.8390805 30.6666667,15.0930936 30.6666667,11.7057471 C30.6666667,8.31840066 27.9206798,5.57241379 24.5333333,5.57241379 L11.4255599,5.57241379 Z" id="Path-2" fill-rule="nonzero"></path>
+                        <circle id="Oval-2" cx="11.4666667" cy="2.90574713" r="2.66666667"></circle>
+                        <circle id="Oval-2-Copy" cx="9.33333333" cy="20.5057471" r="2.66666667"></circle>
+                        <circle id="Oval-2-Copy-4" cx="2.66666667" cy="20.5057471" r="2.66666667"></circle>
+                    </g>
+                </g>
+                <g id="Group-4-Copy-3" transform="translate(19.333333, 11.466667) scale(-1, 1) translate(-19.333333, -11.466667) translate(2.666667, 0.000000)" fill="#14E2C9">
+                    <g id="Group-7">
+                        <circle id="Oval-2" cx="9.33333333" cy="2.66666667" r="2.66666667"></circle>
+                        <circle id="Oval-2-Copy-2" cx="2.66666667" cy="2.66666667" r="2.66666667"></circle>
+                        <circle id="Oval-2-Copy" cx="11.2" cy="20.2666667" r="2.66666667"></circle>
+                        <path d="M9.33333333,5.33333333 L9.33333333,-8.7e-14 L24.5333333,-8.32104387e-14 C30.8661985,-8.4444917e-14 36,5.13380154 36,11.4666667 C36,17.7995318 30.8661985,22.9333333 24.5333333,22.9333333 L11.5151099,22.9333333 L11.5151099,17.6 L24.5333333,17.6 C27.9206798,17.6 30.6666667,14.8540131 30.6666667,11.4666667 C30.6666667,8.0793202 27.9206798,5.33333333 24.5333333,5.33333333 L9.33333333,5.33333333 Z" id="Path-2" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

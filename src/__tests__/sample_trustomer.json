@@ -1,0 +1,58 @@
+{
+  "send_config": {
+    "news2": {
+      "zero_severity_interval_hours": 12,
+      "low_severity_interval_hours": 12,
+      "low_medium_severity_interval_hours": 1,
+      "medium_severity_interval_hours": 1,
+      "high_severity_interval_hours": 0.5,
+      "escalation_policy": {
+        "routine_monitoring":    "<p>Minimum 12 hourly<br/><br/>Continue routine <b>NEWS</b> monitoring with every set of observations.</p>",
+        "low_monitoring":        "<p>Minimum 4 to 6 hourly<br/><br/>1. Inform registered nurse who must assess the patient<br/><br/>2. Registered nurse to decide if increased frequency of monitoring and/or escalation of clinical care is required</p>",
+        "low_medium_monitoring": "<p>Increase frequency to a <b>minimum</b> of 1 hourly<br/>  <br/><b>All</b><br/>Commence fluid balance chart.<br/>Consider urinary catheter.<br/>Use SBAR for any communication.<br/><br/><b>Warwick Site</b><br/>Registered nurse must: <ul> <li>Contact Junior Doctor to review patient within 30 minutes.</li> <li>Inform Critical Care Outreach bleep 3101.</li> <li>Medical Team must document treatment escalation plan.</li> </ul><br/><b>All other sites</b> <br/>Inform nurse in charge.<br/>Immediate call to Doctor.<br/>'Out of hours' follow local procedure.<br/>Call 999 if transfer to acute hospital is required.</p>",
+        "medium_monitoring":     "<p>Increase frequency to a <b>minimum</b> of 30 minutes<br/><br/><b>All</b><br/>Commence fluid balance chart.<br/>Consider urinary catheter.<br/>Use SBAR for any communication.<br/><br/><b>Warwick Site</b><br/>Registered nurse must: <ul> <li>Contact Junior Doctor to review patient within 30 minutes.</li> <li>Inform Critical Care Outreach bleep 3101.</li> <li>Medical Team must document treatment escalation plan.</li> </ul><br/><b>All other sites</b> <br/>Inform nurse in charge.<br/>Immediate call to Doctor.<br/>'Out of hours' follow local procedure.<br/>Call 999 if transfer to acute hospital is required.</p>",
+        "high_monitoring":       "<p>Increase frequency to a <b>minimum</b> of 30 minutes<br/><br/><b>All</b><br/>Commence fluid balance chart.<br/>Consider urinary catheter.<br/>Use SBAR for any communication.<br/><br/><b>Warwick Site</b><br/>Registered nurse must: <ul> <li>Contact Junior Doctor to review patient within 30 minutes.</li> <li>Inform Critical Care Outreach bleep 3101.</li> <li>Medical Team must document treatment escalation plan.</li> </ul><br/><b>All other sites</b> <br/>Inform nurse in charge.<br/>Immediate call to Doctor.<br/>'Out of hours' follow local procedure.<br/>Call 999 if transfer to acute hospital is required.</p>"
+      }
+    },
+    "nurse_concern": [
+      { "code": "A","name": "Airway compromise", "text": "Acute airway compromised"},
+      { "code": "B","name": "Bleeding/Melaena", "text": "Blood loss / melaena"},
+      { "code": "C","name": "Pallor or Cyanosis", "text": "Colour change in patient / extremity (pale, dusky, blue)"},
+      { "code": "D","name": "New Facial/limb weakness", "text": "Sudden loss of movement, or weakness of face or limb"},
+      { "code": "E","name": "Diarrhoea/vomiting", "text": "New onset of vomiting / diarrhoea"},
+      { "code": "G","name": "Unresolved Pain", "text": "Unresolved or new onset of pain (undiagnosed)"},
+      { "code": "F","name": "Abnormal Electrolyte/BG", "text": "Abnormal electrolyte or blood glucose level"},
+      { "code": "H","name": "Self Harm", "text": "Self-harm episode or threatened"},
+      { "code": "J","name": "Shock (HR > BP)", "text": "Heart rate > systolic BP"},
+      { "code": "I","name": "Infection?", "text": "Possible infection – fill in sepsis chart"},
+      { "code": "K","name": "Non-specific concern", "text": "General concern"}
+    ],
+    "bcp": {
+      "pages_front": ["cover_page", "threshold_4cols"],
+      "zero_severity_interval": "Minimum 12 hourly observation",
+      "low_severity_interval": "Minimum 4-6 hourly observation",
+      "medium_severity_interval": "Increase frequency to a minimum\u00a01\u00a0hourly observation",
+      "high_severity_interval": "Increase frequency to a minimum of\u00a030\u00a0minutes observation",
+
+      "routine_monitoring": "<p>Continue routine NEWS monitoring with every set of observations</p>",
+      "low_monitoring": "<p>Inform registered nurse who must assess the patient<br/><br/>Registered nurse to decide if increased frequency of monitoring and/or escalation of clinical care is required</p>",
+      "medium_monitoring": "<p><b>For Warwick</b><br/>Commence fluid balance chart<br/>Consider urinary catheter<br/>Use SBAR for any communication<br/>Registered nurse must: <ul> <li>Contact Junior Doctor to review patient within 30 minutes</li> <li>Inform Critical Care Outreach bleep 3101</li> <li>Medical Team must document treatment escalation plan</li> </ul> <b>For Leamington, Stratford and Ellen Badger sites:</b> <br/> Commence fluid balance chart <br/> Consider urinary catheter <br/> Use SBAR for any communication <br/> Inform nurse in charge <br/> Immediate call to Doctor <br/> 'Out of hours' follow local procedure <br/> Call 999 if transfer to acute hospital is required </p>",
+      "high_monitoring": "<p><b>For Warwick</b><br/>Commence fluid balance chart<br/>Consider urinary catheter<br/>Use SBAR for any communication<br/>Registered nurse must immediately: <ul> <li>Inform Medical Team SPR level or above - To attend within 30 minutes</li> <li>Inform Critical Care Outreach bleep 3101</li> <li>Medical Team must document treatment escalation plan</li> </ul> <b>For Leamington, Stratford and Ellen Badger sites:</b> <br/> Consider urinary catheter <br/> Use SBAR for any communication <br/> Inform nurse in charge <br/> Immediate call to Doctor <br/> 'Out of hours' follow local procedure <br/> Call 999 if transfer to acute hospital is required </p>"
+
+    },
+    "oxygen_masks": [
+      {"code": "RA", "name": "Room Air"},
+      {"code": "V{mask_percent}", "name": "Venturi"},
+      {"code": "H{mask_percent}", "name": "Humidified"},
+      {"code": "HIF{mask_percent}", "name": "High Flow"},
+      {"code": "N", "name": "Nasal cann."},
+      {"code": "SM", "name": "Simple"},
+      {"code": "RM", "name": "Resv mask"},
+      {"code": "TM", "name": "Trach."},
+      {"code": "CP", "name": "CPAP"},
+      {"code": "NIV", "name": "NIV"},
+      {"code": "OPT", "name": "Optiflow"},
+      {"code": "NM", "name": "Nebuliser"}
+    ]
+  }
+}

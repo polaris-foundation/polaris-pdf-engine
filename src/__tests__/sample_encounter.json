@@ -1,0 +1,41 @@
+{
+  "admitted_at": "2019-01-25T00:00:00.000Z",
+  "created": "2019-02-27T18:15:15.842Z",
+  "created_by": { "first_name": "Stan", "last_name": "Lee", "uuid": "G" },
+  "deleted_at": null,
+  "dh_product": [
+    {
+      "created": "2019-01-16T23:39:29.563Z",
+      "created_by": {
+        "first_name": "Hollie",
+        "last_name": "White",
+        "uuid": "B"
+      },
+      "modified": "2019-01-16T23:39:29.563Z",
+      "modified_by": {
+        "first_name": "Hollie",
+        "last_name": "White",
+        "uuid": "B"
+      },
+      "uuid": "6ee32045-34b5-4dc7-90eb-8b7bdfdcb7f9"
+    }
+  ],
+  "discharged_at": null,
+  "encounter_type": "INPATIENT",
+  "epr_encounter_id": "2018L73782250",
+  "location_uuid": "B1-7",
+  "modified": "2019-02-27T18:15:15.842Z",
+  "modified_by": { "first_name": "Stan", "last_name": "Lee", "uuid": "G" },
+  "patient_record_uuid": "83b4fee8-1e01-4693-828b-081a467c15ac",
+  "spo2_scale": 1,
+  "score_system": "news2",
+  "score_system_history": [
+    {
+      "changed_time": "2019-03-02T18:15:00.123Z",
+      "score_system": "news2",
+      "spo2_scale": 1,
+      "changed_by": { "first_name": "Hank", "last_name": "Pym", "uuid": "AM" }
+    }
+  ],
+  "uuid": "6c5c7d62-68d4-424c-8e55-98df3fa4bb2f"
+}
