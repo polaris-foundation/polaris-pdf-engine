@@ -48,7 +48,7 @@ install: .git/hooks/pre-commit
 endif
 
 docker-build: ## Build docker container
-	docker build -t ${PROJECT_NAME} --build-arg CUSTOM_PYPI_URL=${CUSTOM_PYPI_URL} .
+	docker build -t ${PROJECT_NAME} .
 
 docker-run: ## Run service and dependencies with docker-compose
 	docker-compose up
