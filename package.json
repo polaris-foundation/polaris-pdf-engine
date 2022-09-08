@@ -1,7 +1,7 @@
 {
   "name": "dhos-pdf-engine",
   "version": "0.1.0",
-  "description": "DHOS PDF Engine",
+  "description": "Polaris PDF Engine",
   "main": "src/js/server.ts",
   "scripts": {
     "start": "ts-node src/server/server.ts",
@@ -23,7 +23,7 @@
       "email": "duncan.booth@sensynehealth.com"
     }
   ],
-  "homepage": "https://github.com/draysontechnologies/dhos-pdf-engine",
+  "homepage": "https://github.com/polaris-foundation/polaris-pdf-engine",
   "dependencies": {
     "@types/cheerio": "^0.22.12",
     "@types/express": "^4.17.0",

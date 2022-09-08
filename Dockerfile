@@ -42,6 +42,8 @@ RUN yarn test
 #####
 FROM basebuilder as runner
 
+LABEL org.opencontainers.image.source=https://github.com/polaris-foundation/polaris-pdf-engine
+
 # Copy dist files from sourcetransformer
 COPY --from=sourcetransformer /app/src src/
 COPY --from=sourcetransformer /app/package.json .
